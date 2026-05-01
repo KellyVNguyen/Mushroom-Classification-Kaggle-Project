@@ -16,15 +16,15 @@
 ### Data
 
 * Data:
-  * Type: CSV file containing entirely categorical features (letters and '?'). The target is a binary categorical class ('e' for edible, 'p' for poisonous).
-  * Size: The original dataset contains 8124 instances (rows) and 23 features (columns). After one-hot encoding and cleaning, the dataset used for modeling has 8124 instances and 95 features.
-  * Instances (Train, Test, Validation Split): The dataset was split into 70% for training (5686 instances), 15% for validation (1219 instances), and 15% for testing (1219 instances).
+  * **Type**: CSV file containing entirely categorical features (letters and '?'). The target is a binary categorical class ('e' for edible, 'p' for poisonous).
+  * **Size**: The original dataset contains 8124 instances (rows) and 23 features (columns). After one-hot encoding and cleaning, the dataset used for modeling has 8124 instances and 95 features.
+  * **Instances (Train, Test, Validation Split)**: The dataset was split into 70% for training (5686 instances), 15% for validation (1219 instances), and 15% for testing (1219 instances).
 
 #### Preprocessing / Clean up
 
-* Missing Values: The '?' character in the stalk-root feature was identified as a missing value indicator and was replaced with the string 'missing' to treat it as another category.
-* Feature Removal: The veil-type feature was dropped because it contained only one unique value, making it not imformative for classification.
-* One-Hot Encoding: All remaining categorical features were converted into numerical format using one-hot encoding. This created binary columns for each unique category, suitable for machine learning algorithms. No rescaling was required as all features became binary (0 or 1) after encoding.
+* **Missing Values**: The '?' character in the stalk-root feature was identified as a missing value indicator and was replaced with the string 'missing' to treat it as another category.
+* **Feature Removal**: The veil-type feature was dropped because it contained only one unique value, making it not imformative for classification.
+* **One-Hot Encoding**: All remaining categorical features were converted into numerical format using one-hot encoding. This created binary columns for each unique category, suitable for machine learning algorithms. No rescaling was required as all features became binary (0 or 1) after encoding.
 
 #### Data Visualization
 
@@ -40,11 +40,11 @@
 
 
 * Bar plots were generated for each feature, showing the distribution of categories for both edible and poisonous mushrooms. These visualizations highlighted several promising features for classification due to clear separation in their distributions, notably odor, spore-print-color, gill-size, gill-color, and ring-type.
-* Odor (odor): The odor feature shows a strong distinction between edible and poisonous mushrooms. Certain odor types appear in one class, making it a highly indicative feature. For instance, 'a' (almond) and 'l' (anise) odors are only found in edible mushrooms, while 'p' (pungent), 'f' (foul), 'c' (creosote) odors are found in poisonous ones. 'n' (none) odor also shows a clear distribution.
-* Spore Print Color (spore-print-color): Similar to odor, different spore print colors are predominantly associated with either edible or poisonous mushrooms, suggesting it's a powerful discriminator.
-* Gill Size (gill-size): While not as distinct as odor or spore print color, the distribution of gill size (broad vs. narrow) also shows some differences between the two classes.
-* Gill Color (gill-color): Several gill colors are strongly associated with one class over the other, making this a useful feature.
-* Ring Type (ring-type): Some ring types are present in one class but absent or very rare in the other, indicating its potential for classification.
+* **Odor (odor)**: The odor feature shows a strong distinction between edible and poisonous mushrooms. Certain odor types appear in one class, making it a highly indicative feature. For instance, 'a' (almond) and 'l' (anise) odors are only found in edible mushrooms, while 'p' (pungent), 'f' (foul), 'c' (creosote) odors are found in poisonous ones. 'n' (none) odor also shows a clear distribution.
+* **Spore Print Color (spore-print-color)**: Similar to odor, different spore print colors are predominantly associated with either edible or poisonous mushrooms, suggesting it's a powerful discriminator.
+* **Gill Size (gill-size)**: While not as distinct as odor or spore print color, the distribution of gill size (broad vs. narrow) also shows some differences between the two classes.
+* **Gill Color (gill-color)**: Several gill colors are strongly associated with one class over the other, making this a useful feature.
+* **Ring Type (ring-type)**: Some ring types are present in one class but absent or very rare in the other, indicating its potential for classification.
 * These features, where there is clear separation or strong associations between their categories and the 'class' (edible/poisonous), are likely to be most useful for a machine learning model.
 
 ### Problem Formulation
@@ -53,9 +53,9 @@
   * Input: The input to the models consists of 95 one-hot encoded binary features representing the physical characteristics of the mushrooms.
   * Output: The output is a binary class label: 0 for edible mushrooms and 1 for poisonous mushrooms.
   * Models
-    * Decision Tree Classifier: Chosen for its simplicity, interpretability, and ability to handle categorical data directly. It serves as an excellent baseline.
-    * Random Forest Classifier: Selected as an ensemble method to improve robustness, reduce overfitting compared to single decision trees, and potentially provide more stable feature importances.
-    * Logistic Regression: Implemented as a linear classification model to assess the linearity of the dataset's separability and provide a contrast to the tree-based models.
+    * **Decision Tree Classifier**: Chosen for its simplicity, interpretability, and ability to handle categorical data directly. It serves as an excellent baseline.
+    * **Random Forest Classifier**: Selected as an ensemble method to improve robustness, reduce overfitting compared to single decision trees, and potentially provide more stable feature importances.
+    * **Logistic Regression**: Implemented as a linear classification model to assess the linearity of the dataset's separability and provide a contrast to the tree-based models.
   * Loss, Optimizer, other Hyperparameters.
     * For all models, random_state=42 was set for reproducibility.
     * For Logistic Regression, solver='liblinear' and max_iter=200 were specified to ensure convergence and handle the dataset effectively.
@@ -80,7 +80,7 @@
 | Random Forest | 1.000 | 1.000 |
 | Logistic Regression | 0.999 | 0.999 |
 
-* Show one (or few) visualization(s) of results:
+* Visualization(s) of results for **Decision Tree**:
 
 <img width="807" height="590" alt="Image" src="https://github.com/user-attachments/assets/6fc65b4b-a9ec-4084-9ff5-6c62fbb7da01" />
 
@@ -89,9 +89,9 @@
 <img width="1162" height="547" alt="image" src="https://github.com/user-attachments/assets/83e5a1b2-c097-4ce0-85da-e7fa56a7ac86" />
 
 
-   * Confusion Matrix: A Confusion Matrix was generated for the Decision Tree model on the validation set, visually confirming the perfect classification with 636 True Negatives and 583 True Positives, and 0 False Positives or False Negatives.
-   * Decision Tree: The Decision Tree was visualized (with max_depth=3) to illustrate its decision-making process, showing how key features like odor_n and stalk-root lead to classifications.
-   * Feature Importance: Based on the lengths of the bars, odor (odor_n) is displayed as the most important feature. This aligns with our initial data exploration which suggested 'odor' as a strong discriminator. Features like stalk-root_c, stalk-root_r, spore-print-color_r, and spore-print-color_u also show significant importance. This suggests that the characteristics related to the mushroom's stalk root and spore print color are also highly predictive of whether a mushroom is edible or poisonous.
+   * **Confusion Matrix**: A Confusion Matrix was generated for the Decision Tree model on the validation set, visually confirming the perfect classification with 636 True Negatives and 583 True Positives, and 0 False Positives or False Negatives.
+   * **Decision Tree**: The Decision Tree was visualized (with max_depth=3) to illustrate its decision-making process, showing how key features like odor_n and stalk-root lead to classifications.
+   * **Feature Importance**: Based on the lengths of the bars, odor (odor_n) is displayed as the most important feature. This aligns with our initial data exploration which suggested 'odor' as a strong discriminator. Features like stalk-root_c, stalk-root_r, spore-print-color_r, and spore-print-color_u also show significant importance. This suggests that the characteristics related to the mushroom's stalk root and spore print color are also highly predictive of whether a mushroom is edible or poisonous.
 
 ### Conclusions
 
@@ -99,14 +99,14 @@
 
 ### Future Work
 
-* Hyperparameter Tuning: Although performance is already perfect/near-perfect, further hyperparameter tuning for each model could be explored.
-* Other Classification Algorithms: Experiment with other algorithms like Support Vector Machines (SVMs) or Gradient Boosting Machines (GBMs) for broader comparison.
+* **Hyperparameter Tuning**: Although performance is already perfect/near-perfect, further hyperparameter tuning for each model could be explored.
+* **Other Classification Algorithms**: Experiment with other algorithms like Support Vector Machines (SVMs) or Gradient Boosting Machines (GBMs) for broader comparison.
 
 ## How to reproduce results
 
-1. Environment: The Mushroom Classification analysis was performed in JupyterLab.
-2. Data: Download the mushrooms.csv dataset from the Kaggle Mushroom Classification page and upload it to your environment or ensure it's accessible in the same directory as the notebook.
-3. Run Notebook: Execute all cells in the provided Jupyter notebook in order. The notebook does all of the data loading, preprocessing, model training, evaluation, and visualization steps.
+1. **Environment**: The Mushroom Classification analysis was performed in JupyterLab.
+2. **Data**: Download the mushrooms.csv dataset from the Kaggle Mushroom Classification page and upload it to your environment or ensure it's accessible in the same directory as the notebook.
+3. **Run Notebook**: Execute all cells in the provided Jupyter notebook in order. The notebook does all of the data loading, preprocessing, model training, evaluation, and visualization steps.
 
 ### Overview of files in repository
 
