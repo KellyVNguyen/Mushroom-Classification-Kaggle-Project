@@ -38,6 +38,7 @@
 
 <img width="630" height="470" alt="Image" src="https://github.com/user-attachments/assets/eea9f4dd-7c9f-42b4-bb0e-c9a7068005ef" />
 
+
 * Bar plots were generated for each feature, showing the distribution of categories for both edible and poisonous mushrooms. These visualizations highlighted several promising features for classification due to clear separation in their distributions, notably odor, spore-print-color, gill-size, gill-color, and ring-type.
 * Odor (odor): The odor feature shows a strong distinction between edible and poisonous mushrooms. Certain odor types appear in one class, making it a highly indicative feature. For instance, 'a' (almond) and 'l' (anise) odors are only found in edible mushrooms, while 'p' (pungent), 'f' (foul), 'c' (creosote) odors are found in poisonous ones. 'n' (none) odor also shows a clear distribution.
 * Spore Print Color (spore-print-color): Similar to odor, different spore print colors are predominantly associated with either edible or poisonous mushrooms, suggesting it's a powerful discriminator.
@@ -85,8 +86,12 @@
 
 <img width="1570" height="812" alt="Image" src="https://github.com/user-attachments/assets/8e96a903-3535-4428-bf1d-24383f5d02c9" />
 
-   * A Confusion Matrix was generated for the Decision Tree model on the validation set, visually confirming the perfect classification with 636 True Negatives and 583 True Positives, and 0 False Positives or False Negatives.
-   * The Decision Tree was visualized (with max_depth=3) to illustrate its decision-making process, showing how key features like odor_n and stalk-root lead to classifications.
+<img width="1162" height="547" alt="image" src="https://github.com/user-attachments/assets/83e5a1b2-c097-4ce0-85da-e7fa56a7ac86" />
+
+
+   * Confusion Matrix: A Confusion Matrix was generated for the Decision Tree model on the validation set, visually confirming the perfect classification with 636 True Negatives and 583 True Positives, and 0 False Positives or False Negatives.
+   * Decision Tree: The Decision Tree was visualized (with max_depth=3) to illustrate its decision-making process, showing how key features like odor_n and stalk-root lead to classifications.
+   * Feature Importance: Based on the lengths of the bars, odor (odor_n) is displayed as the most important feature. This aligns with our initial data exploration which suggested 'odor' as a strong discriminator. Features like stalk-root_c, stalk-root_r, spore-print-color_r, and spore-print-color_u also show significant importance. This suggests that the characteristics related to the mushroom's stalk root and spore print color are also highly predictive of whether a mushroom is edible or poisonous.
 
 ### Conclusions
 
