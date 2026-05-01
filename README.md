@@ -39,6 +39,12 @@
 <img width="630" height="470" alt="Image" src="https://github.com/user-attachments/assets/eea9f4dd-7c9f-42b4-bb0e-c9a7068005ef" />
 
 * Bar plots were generated for each feature, showing the distribution of categories for both edible and poisonous mushrooms. These visualizations highlighted several promising features for classification due to clear separation in their distributions, notably odor, spore-print-color, gill-size, gill-color, and ring-type.
+* Odor (odor): The odor feature shows a strong distinction between edible and poisonous mushrooms. Certain odor types appear in one class, making it a highly indicative feature. For instance, 'a' (almond) and 'l' (anise) odors are only found in edible mushrooms, while 'p' (pungent), 'f' (foul), 'c' (creosote) odors are found in poisonous ones. 'n' (none) odor also shows a clear distribution.
+* Spore Print Color (spore-print-color): Similar to odor, different spore print colors are predominantly associated with either edible or poisonous mushrooms, suggesting it's a powerful discriminator.
+* Gill Size (gill-size): While not as distinct as odor or spore print color, the distribution of gill size (broad vs. narrow) also shows some differences between the two classes.
+* Gill Color (gill-color): Several gill colors are strongly associated with one class over the other, making this a useful feature.
+* Ring Type (ring-type): Some ring types are present in one class but absent or very rare in the other, indicating its potential for classification.
+* These features, where there is clear separation or strong associations between their categories and the 'class' (edible/poisonous), are likely to be most useful for a machine learning model.
 
 ### Problem Formulation
 
