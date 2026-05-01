@@ -71,7 +71,7 @@
 
 ### Performance Comparison
 
-* Clearly define the key performance metric(s): The primary performance metric used for evaluation was Accuracy, which measures the proportion of correctly classified instances.
+* Key performance metric(s): The primary performance metric used for evaluation was Accuracy, which measures the proportion of correctly classified instances.
 * Show/compare results in one table:
   
 | Model  | Validation Accuracy | Test Accuracy |
@@ -79,6 +79,8 @@
 | Decision Tree | 1.000 | 1.000 |
 | Random Forest | 1.000 | 1.000 |
 | Logistic Regression | 0.999 | 0.999 |
+
+* All three models performed well on the test set, with the Decision Tree and Random Forest achieving perfect accuracy. This indicates that the Decision Tree and Random Forest model classified all mushrooms in the test set as either edible or poisonous. The Logistic Regression model also shows very strong performance, indicating the dataset is highly separable. This confirms the robustness of the findings from the validation set evaluation.
 
 * Visualization(s) of results for **Decision Tree**:
 
