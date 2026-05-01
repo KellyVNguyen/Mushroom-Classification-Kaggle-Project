@@ -1,6 +1,6 @@
 ![](UTA-DataScience-Logo.png)
 
-# Project Title
+# Mushroom Classification Kaggle Project
 
 * **One Sentence Summary**: This repository attempts to classify mushrooms as edible or poisonous using various machine learning models based on their physical characteristics using data from the "Mushroom Classification" Kaggle challenge (https://www.kaggle.com/datasets/uciml/mushroom-classification). 
 
